@@ -13,6 +13,7 @@ require_once __DIR__ . '/models/Food.php';
     <title>Document</title>
 </head>
 <body>
+    <!-- <p><?= $food1->description?></p> -->
     
 </body>
 </html>

@@ -6,7 +6,7 @@ class Food extends Product
     public $weigth;
     public $ingredients;
 
-    public function __construct($description,$brand,$price,$weigth,$ingredients)
+    public function __construct($description,$brand,$price,$weigth,array $ingredients)
     {
         parent::__construct($description,$brand,$price);
         $this->weigth =$weigth;
@@ -14,7 +14,7 @@ class Food extends Product
     }
 }
 
-$food1 = new Food ('Croccantini','Royal Gattini',30,'1kg','carote');
-var_dump($food1);
+// $food1 = new Food ('Croccantini','Royal Gattini',30,'1kg',['carote','piselli']);
+// var_dump($food1);
 
 ?>
