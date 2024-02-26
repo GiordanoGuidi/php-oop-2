@@ -2,6 +2,8 @@
 require_once __DIR__ . '/models/Product.php';
 require_once __DIR__ . '/models/Food.php';
 require_once __DIR__ . '/models/Game.php';
+require_once __DIR__ . '/models/Accessory.php';
+
 
 ?>
 
