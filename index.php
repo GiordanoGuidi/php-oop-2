@@ -5,12 +5,20 @@ require_once __DIR__ . '/models/Game.php';
 require_once __DIR__ . '/models/Accessory.php';
 require_once __DIR__ . '/models/Category.php';
 
-$food1 = new Food ('Royal Canin mini',
-'https://arcaplanet.vtexassets.com/arquivos/ids/284621/Mini-Adult.jpg?v=638182891693570000',5,);
-$food2 = new Food ('Almo Nature Holistic Maintenance Medium Large',
-'https://arcaplanet.vtexassets.com/arquivos/ids/245173/almo-nature-holistic-cane-adult-medium-pollo-e-riso.jpg',6);
 
-$products =[$food1,$food2];
+$dog_label = new Category ('dog');
+$cat_label = new Category ('cat');
+$fish_label = new Category ('fish');
+
+
+$food1 = new Food ('Royal Canin mini',
+'https://arcaplanet.vtexassets.com/arquivos/ids/284621/Mini-Adult.jpg?v=638182891693570000',5,$dog_label);
+$food2 = new Food ('Almo Nature Holistic Maintenance Medium Large',
+'https://arcaplanet.vtexassets.com/arquivos/ids/245173/almo-nature-holistic-cane-adult-medium-pollo-e-riso.jpg',6,$dog_label);
+$food3 = new Food ('Almo Nature Cat Daily Lattina','https://arcaplanet.vtexassets.com/arquivos/ids/245336/almo-daily-menu-cat-400-gr-vitello.jpg',15,$cat_label);
+
+
+$products =[$food1,$food2,$food3];
 var_dump($products);
 
 
