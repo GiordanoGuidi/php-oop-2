@@ -11,10 +11,15 @@ class Product
         $this->brand = $brand;
         $this->price = $price;
     }
+
+    public function getPrice()
+    {
+        echo 'Prezzo: ' .$this->price . '€';
+    }
 }
 
 $product1 = new Product('croccantini','Royal Canini',18);
-var_dump($product1);
+var_dump($product1->getPrice());
 
 
 ?>
