@@ -5,9 +5,9 @@ class Game extends Product
 {
     public $life_stage ;
 
-    public function __construct($description,$brand,$price,$life_stage)
+    public function __construct($price,$life_stage)
     {
-        parent::__construct($description,$brand,$price);
+        parent::__construct($brand,$price);
         $this->life_stage = $life_stage;
     }
 }

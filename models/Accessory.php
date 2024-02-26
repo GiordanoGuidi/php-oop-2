@@ -5,14 +5,14 @@ class Accessory extends Product
 {
     public $life_stage;
 
-    public function __construct($brand,$description,$price,$image,$life_stage,)
+    public function __construct($title,$image,$price,$life_stage,)
     {
-        parent::__construct($brand,$description,$price,$image);
+        parent::__construct($title,$image,$price);
         $this->life_stage = $life_stage;
     }
 }
 
-$accessory1 = new Accessory ('Croccantini','Royal Gattini',5,'Adult');
+$accessory1 = new Accessory ('Croccantini','Royal Gattini',5,'Adult','');
 // var_dump($accessory1);
 
 ?>
