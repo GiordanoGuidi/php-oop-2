@@ -4,13 +4,12 @@ require_once __DIR__ . '/Product.php';
 class Category
 {
     public $label;
-    public function __construct($label)
+    public $icon;
+    public function __construct($label,$icon)
     {
         $this->label =$label;
+        $this->icon = $icon;
     }
 }
-
-// $category1 = new Category ('Cani');
-// var_dump($category1);
 
 ?>

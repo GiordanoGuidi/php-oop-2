@@ -7,10 +7,10 @@ require_once __DIR__ . '/models/Category.php';
 
 
 //# Istances
-$dog_label = new Category ('dog');
-$cat_label = new Category ('cat');
-$fish_label = new Category ('fish');
-$bird_label = new Category ('bird');
+$dog_label = new Category ('dog',"fa-solid fa-dog");
+$cat_label = new Category ('cat',"fa-solid fa-cat");
+$fish_label = new Category ('fish',"fa-solid fa-fish");
+$bird_label = new Category ('bird',"fa-solid fa-kiwi-bird");
 
 
 $food1 = new Food ('Royal Canin mini',
@@ -33,24 +33,26 @@ var_dump($products);
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!--BOOTSTRAP-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <?php foreach($products as $product): ?>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <!--BOOTSTRAP-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <!--FONTAWESOME-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fontawesome-iconpicker/3.2.0/js/fontawesome-iconpicker.min.js" integrity="sha512-7dlzSK4Ulfm85ypS8/ya0xLf3NpXiML3s6HTLu4qDq7WiJWtLLyrXb9putdP3/1umwTmzIvhuu9EW7gHYSVtCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row ">
+                <?php foreach($products as $product): ?>
             <div class="col-3">
                 <div class="card">
-                    <img src="<?= $product->image?>" class="card-img-top img-fluid" alt="...">
+                    <img src="<?= $product->image?>" class="card-img-top img-fluid" alt="<?= $product->title?>">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <h5 class="card-title"><?= $product->title ?></h5>
+                        <p><?= $product->getPrice() ?></p>
+                        <span><i class="<?= $product->label->icon?>"></i></span>
                     </div>
                 </div>
             </div>

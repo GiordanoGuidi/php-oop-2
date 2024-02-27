@@ -6,7 +6,8 @@ class Food extends Product
 {
     public $life_stage;
     public $taste ;
-    public $òabel;
+    public $label;
+    public $icon;
 
 
     public function __construct($title,$image,$price,Category $label,$life_stage = null,$taste = null,)
@@ -14,6 +15,8 @@ class Food extends Product
         parent::__construct($title,$image,$price);
         $this->taste = $taste?: null;
         $this->life_stage = $life_stage?: null;
+        $this->label = $label;
+
     }
 }
 
