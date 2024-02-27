@@ -36,7 +36,6 @@ $game2 = new Game('Topini di peluche Trixie', 'https://arcaplanet.vtexassets.com
 
 //#Array of products
 $products = [$food1, $food2, $food3, $food4, $accessory1, $accessory2, $game1, $game2];
-var_dump($products);
 
 
 
@@ -58,24 +57,31 @@ var_dump($products);
 
 <body>
     <div class="container">
-        <div class="row g-4">
-            <?php foreach ($products as $product) : ?>
-                <div class="col-3">
-                    <!--Product card-->
-                    <div class="product-card card h-100 p-2 <?= $product->label->label ?>">
-                        <div class="card-header">
-                            <i class="<?= $product->label->icon ?>"></i>
-                            <span><?= $product->label->label ?></span>
+        <header class="text-center mt-3">
+            <h1>Lista dei prodotti</h1>
+        </header>
+        <main>
+            <section id="product-list">
+                <div class="row g-4 mt-3">
+                    <?php foreach ($products as $product) : ?>
+                        <div class="col-3">
+                            <!--Product card-->
+                            <div class="product-card card h-100 p-2 <?= $product->label->label ?>">
+                                <div class="card-header">
+                                    <i class="<?= $product->label->icon ?>"></i>
+                                    <span><?= $product->label->label ?></span>
+                                </div>
+                                <img src="<?= $product->image ?>" class="card-img-top" alt="<?= $product->title ?>">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title"><?= $product->title ?></h5>
+                                    <p><?= $product->getPrice() ?></p>
+                                </div>
+                            </div>
                         </div>
-                        <img src="<?= $product->image ?>" class="card-img-top" alt="<?= $product->title ?>">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $product->title ?></h5>
-                            <p><?= $product->getPrice() ?></p>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
-            <?php endforeach; ?>
-        </div>
+            </section>
+        </main>
     </div>
 
 
