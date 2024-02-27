@@ -6,11 +6,11 @@ require_once __DIR__ . '/models/Accessory.php';
 require_once __DIR__ . '/models/Category.php';
 
 
+//# Istances
 $dog_label = new Category ('dog');
 $cat_label = new Category ('cat');
 $fish_label = new Category ('fish');
 $bird_label = new Category ('bird');
-
 
 
 $food1 = new Food ('Royal Canin mini',
@@ -24,7 +24,7 @@ $accessory2 = new Accessory ('Cartucce Filtranti per Filtro EasyCrystal','https:
 $game1 = new Game ('Kong Classic','https://arcaplanet.vtexassets.com/arquivos/ids/256599/kong-classic1.jpg',8,$dog_label);
 $game2 = new Game ('Topini di peluche Trixie','https://arcaplanet.vtexassets.com/arquivos/ids/223852/trixie-gatto-gioco-active-mouse-peluche.jpg',3,$cat_label);
 
-
+//#Array of products
 $products =[$food1,$food2,$food3,$food4,$accessory1,$accessory2,$game1,$game2];
 var_dump($products);
 
@@ -38,29 +38,32 @@ var_dump($products);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!--BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
-<?php foreach($products as $product): ?>
-    <div class="card" >
-        <img src="<?= $product->image?>" class="card-img-top" alt="...">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-        </ul>
+    <div class="container">
+        <div class="row">
+            <?php foreach($products as $product): ?>
+            <div class="col-3">
+                <div class="card">
+                    <img src="<?= $product->image?>" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
     </div>
-    <?php endforeach; ?>
 
 
 
 
-    <!-- <ul>
-        <?php foreach($products as $product): ?>
-        <li>
-            <?php if($product->taste): ?>
-            <p><?= $product->taste?></p>
-        </li>
-        <?php endif ?>
-        <?php endforeach; ?>
-    </ul> -->
+
+
+    
     
 </body>
 </html>
