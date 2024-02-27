@@ -8,3 +8,19 @@ img {
     height: 250px;
     width: 300px;
 }
+
+.card.cat {
+    background-color: cadetblue;
+}
+
+.card.dog {
+    background-color: burlywood;
+}
+
+.card.fish {
+    background-color: lightblue;
+}
+
+.card.bird {
+    background-color: thistle;
+}
